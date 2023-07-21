@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: "Gilroy", sans-serif;
+}
+
+.container {
+  width: 100%;
+  padding: 30px;
+  margin: 30px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  transition: all 2s ease;
+}
+
+.block-input-label {
+  color: red;
+  font-family: Gilroy;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: normal;
+  display: none;
+  position: absolute;
+  top: -11px;
+  left: 10px;
+  pointer-events: none;
+}
+
+.main-h1 {
+  color: #000;
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  pointer-events: none;
+}
+
+.block-input {
+  width: 321px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid #007fff;
+  padding: 20px 12px;
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-input {
+  position: absolute;
+  color: red;
+  font-family: Gilroy;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+  top: 10px;
+  left: 10px;
+}
+
+.blockInput:hover {
+  color: #007fff;
+}
+
+.add-block-btn {
+  width: 155px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 113, 227, 1);
+  background-color: rgba(0, 113, 227, 1);
+  padding: 20px 12px;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+
+.add-block-btn:active {
+  backdrop-filter: blur(10px);
+  background: rgb(0, 53, 105);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  border-color: rgb(0, 53, 105);
+  transition: all 0.5s ease-in-out;
+}
+
+.main-hr {
+  width: 1008px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  margin: 40px 0px 0px 0px;
+  pointer-events: none;
+}
+
+.blocks-content {
+  overflow: hidden;
+}
+
+.blocks-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.block {
+  width: 282px;
+  height: 90px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 127, 255, 1);
+  background-color: rgba(240, 240, 240, 1);
+  padding: 21px 25px;
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  cursor: grabbing;
+}
+
+.block-close-btn {
+  position: absolute;
+  right: 23px;
+  top: 23px;
+  border-radius: 100%;
+  width: 13.333px;
+  height: 13.333px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid black;
+  transition: all 0.3s ease-in-out;
+}
+
+.block-close-btn::before,
+.block-close-btn::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  display: block;
+  width: 6px;
+  height: 1px;
+  background: #000;
+}
+
+.block-close-btn::before {
+  transform: rotate(45deg);
+}
+
+.block-close-btn::after {
+  transform: rotate(-45deg);
+}
+
+.block-close-btn:active {
+  box-shadow: inset 0 0 10px rgba(0, 113, 227, 1);
+  transition: all 0.3s ease-in-out;
+}
+
+.block-h2 {
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: 170px;
+  height: 16.605px;
+  flex-shrink: 0;
+}
+
+.block-p {
+  color: rgba(0, 0, 0, 0.55);
+  font-family: Gilroy;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(199, 199, 199);
+  border-radius: 32px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 113, 227, 1);
+  border-radius: 100px;
+}
+
+.modal-window {
+  position: fixed;
+  bottom: 20px;
+  right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  width: auto;
+  height: 100px;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.55);
+  font-family: Gilroy;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.btn-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pay-btn {
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 113, 227, 1);
+  background-color: white;
+  padding: 20px 12px;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+
+.pay-btn:active {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pay-btn:hover {
+  font-size: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 53, 105, 0.361);
+  border-color: rgb(0, 53, 105);
+  transition: all 0.5s ease-in-out;
+}
+
+.img-pay {
+  pointer-events: none;
+}
